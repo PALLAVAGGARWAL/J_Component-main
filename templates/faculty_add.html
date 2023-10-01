@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% if name %}
+<section class="about text-center">
+    <h2 class="my-5">{{ name }} has been ADDED !</h2>
+</section>
+<hr class="hr">
+{% endif %}
+
+<section class="about" id="add_show">
+    <h1 class="text-center"><strong>Enter Faculty Details</strong></h1>
+    <form action="{{ url_for('faculty_add') }}" method="POST">
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Reg No" name="reg_no">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Faculty Name" name="name">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="number" class="form-control" placeholder="Phone No" name="phone">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="email" class="form-control" placeholder="Email" name="email">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Rank" name="rank">
+        </div>
+        <div class="my-5 text-center">
+            <input type="submit" value="Add" class="btn btn-primary btn-block mb-4" onclick="hider()">
+        </div>
+    </form>
+</section>
+
+{% endblock content %}

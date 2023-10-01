@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <section class="about" id="view">
+        <h2 class="text-center my-5">All Faculty Details</h2>
+        <table class="table table-bordered table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Reg_No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rank</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for faculty in allFaculty %}
+                <tr>
+                    <th scope="row">{{faculty.reg_no}}</th>
+                    <td>{{faculty.name}}</td>
+                    <td>{{faculty.phone}}</td>
+                    <td>{{faculty.email}}</td>
+                    <td>{{faculty.rank}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+<hr class="hr">
+
+<section class="about">
+    <h2 class="text-center">Search for Faculty</h2>
+    <form action="{{ url_for('faculty_view') }}" method="POST" style="margin: 0 18rem;">
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Faculty Reg No" name="reg_no">
+        </div>
+        <div class="my-5 text-center">
+            <input type="submit" value="Search" class="btn btn-primary btn-block mb-4">
+        </div>
+    </form>
+</section>
+{% if faculty %}
+    <script>
+        var x = document.getElementById("view");
+        x.style.display = "None";
+    </script>
+    <section class="about">
+        <table class="table table-bordered table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Reg_No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rank</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for fac in faculty %}
+                <tr>
+                    <th scope="row">{{fac.reg_no}}</th>
+                    <td>{{fac.name}}</td>
+                    <td>{{fac.phone}}</td>
+                    <td>{{fac.email}}</td>
+                    <td>{{fac.rank}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section> 
+{% endif %}
+{% endblock content %}

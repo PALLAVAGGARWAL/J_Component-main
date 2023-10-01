@@ -1,0 +1,129 @@
+body, h1, h2, h3, h4, h5, h6{
+    font-family: sans-serif;
+}
+input {
+    background-color: white;
+}
+hr {
+    width: 85%;
+    padding-top: 3px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#footer {
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.centered {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.navbar-nav {
+    font-size: 20px;
+    font-weight: 600;
+}
+.navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.about {
+    margin: 75px;
+}
+.about h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+.about p {
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.img {
+    width: 100%; 
+    height: auto;
+    opacity: 0.2;
+}
+.img-brand {
+    width: 7rem;
+}
+.img1 {
+    width: 100%;
+    margin-top: 70px;
+    height: 220px;
+}
+
+.card {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: black;
+}
+.card-img-top {
+    width: 7rem;
+    height: 7rem;
+    margin: 1rem auto; 
+}
+.card-body{
+    text-align: center;
+    font-weight: 500;
+}
+.card-body h5{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.card-body a{
+    margin-top: 1rem;
+}
+.card:hover {
+    transform: scale(1.2);
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+
+
+@media screen and (max-width: 650px) {
+    .col {
+        width: 100%;
+        display: block;
+    }
+} 
+.container {
+    padding: 0 16px;
+}
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.container p, h2, h3 {
+    margin-top: 1rem;
+    text-align: center;
+}
+.container h2, h3 {
+    font-weight: 500;
+}
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 1rem auto;
+}
+.button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+}  
+.button:hover {
+        background-color: #555;
+        color: white;
+}

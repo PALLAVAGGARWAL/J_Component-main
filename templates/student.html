@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about text-center">
+    <a href="{{ url_for('student_view') }}" class="btn btn-primary mx-5">Student Login</a>
+    <a href="{{ url_for('student_view2') }}" class="btn btn-primary mx-5">View All Students</a>
+    <a href="{{ url_for('student_add') }}" class="btn btn-primary mx-5">Add Students</a>
+</section>
+
+{% endblock content %}

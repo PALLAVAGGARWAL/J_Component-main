@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about">
+    <h1 class="text-center my-5"><strong>My Course Details</strong></h2>
+    <table class="table table-bordered table-dark my-5">
+        <thead>
+        <tr>
+            <th scope="col">Course ID</th>
+            <th scope="col">Course Title</th>
+            <th scope="col">Course Type</th>
+            <th scope="col">Credits</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for course in allCourses %}
+            <tr>
+                <th scope="row">{{course.course_id}}</th>
+                <td>{{course.title}}</td>
+                <td>{{course.course_type}}</td>
+                <td>{{course.credit}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<hr class="hr">
+<section class="about"> 
+    <h2 class="text-center">Select Course to Drop</h2>
+    <form action="{{ url_for('course_edit') }}" method="POST" style="margin: 0 18rem;">
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Course ID" name="course_id">
+        </div>
+        <div class="my-5 text-center">
+            <input type="submit" value="Drop" class="btn btn-primary btn-block mb-4">
+        </div>
+    </form>
+</section>
+{% if title %}
+<section class="about text-center">
+    <h2 class="my-5">{{ title }} has been DROPPED !</h2>
+    <!-- <a class="btn btn-primary" href="{{ url_for('course_view2') }}">View Your Courses</a> -->
+</section>
+{% endif %}
+
+{% endblock content %}

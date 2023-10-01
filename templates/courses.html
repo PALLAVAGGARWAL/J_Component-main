@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about text-center">
+    <a href="{{ url_for('course_view') }}" class="btn btn-primary mx-5">View All Courses</a>
+    <a href="{{ url_for('course_view2') }}" class="btn btn-primary mx-5">View My Courses</a>
+    <a href="{{ url_for('course_add') }}" class="btn btn-primary mx-5">Add Course</a>
+    <a href="{{ url_for('course_edit') }}" class="btn btn-primary mx-5">Drop Course</a>
+</section>
+
+{% endblock content %}

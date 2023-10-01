@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about">
+    <h2 class="text-center my-5"><strong>All Student Details</strong></h2>
+    <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Reg_No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Batch</th>
+            <th scope="col">Course</th>
+            <th scope="col">Contact</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for st in allStudents %}
+            <tr>
+                <th scope="row">{{st.reg_no}}</th>
+                <td>{{st.name}}</td>
+                <td>{{st.age}}</td>
+                <td>{{st.email}}</td>
+                <td>{{st.batch}}</td>
+                <td>{{st.course}}</td>
+                <td>{{st.phone}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock content %}

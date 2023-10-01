@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about" id="hid">
+<h1 class="text-center">Enter Student Details</h2>
+    <form action="{{ url_for('student_view') }}" method="POST" style="margin: 0 18rem;">
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Reg No" name="reg_no">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Username" name="username">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="password" class="form-control" placeholder="Password" name="password">
+        </div>
+        <div class="my-5 text-center">
+            <input type="submit" value="Log In" class="btn btn-primary btn-block mb-4">
+        </div>
+    </form>
+</section>
+{% if message %}
+<script>
+    var x = document.getElementById("hid");
+    x.style.display = "None";
+</script>
+    <div class="text-center my-5">
+        <h2>{{ message }}</h2>
+        <a class="btn btn-primary" href="{{ url_for('student_view') }}">Go Back</a>
+    </div>
+{% endif %}
+
+{% if not message and stud %}
+<script>
+    var x = document.getElementById("hid");
+    x.style.display = "None";
+</script>
+<section class="about">
+    <table class="table table-bordered table-dark my-5">
+        <thead>
+        <tr>
+            <th scope="col">Reg_No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Batch</th>
+            <th scope="col">Course</th>
+            <th scope="col">Contact</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for st in stud %}
+            <tr>
+                <th scope="row">{{st.reg_no}}</th>
+                <td>{{st.name}}</td>
+                <td>{{st.age}}</td>
+                <td>{{st.email}}</td>
+                <td>{{st.batch}}</td>
+                <td>{{st.course}}</td>
+                <td>{{st.phone}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a class="btn btn-primary" href="{{ url_for('course_view2') }}">View Your Courses</a>
+    </div>
+</section>
+{% endif %}
+
+{% endblock content %}

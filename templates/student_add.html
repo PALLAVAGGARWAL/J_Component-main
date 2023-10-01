@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about" id="add_show">
+    <form action="{{ url_for('student_add') }}" method="POST">
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Reg No" name="reg_no">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder= "Name" name="name">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="number" class="form-control" placeholder="Age" name="age">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="email" class="form-control" placeholder="Email" name="email">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="text" class="form-control" placeholder="Course" name="course">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="number" class="form-control" placeholder="Batch" name="batch">
+        </div>
+        <div class="form-outline my-5" style="color: white;">
+            <input type="number" class="form-control" placeholder="Phone" name="phone">
+        </div>
+        <div class="my-5 text-center">
+            <input type="submit" placeholder="Add" class="btn btn-primary btn-block mb-4">
+        </div>
+    </form>
+</section>
+
+{% if title %}
+<section class="about text-center">
+    <h2 class="my-5">{{ title }} has been ADDED !</h2>
+</section>
+{% endif %}
+
+{% endblock content %}

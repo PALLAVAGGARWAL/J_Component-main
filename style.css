@@ -1,0 +1,29 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+body {
+	background: url('BG.png') no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.Student {
+	position:  absolute;
+	top: 50%;
+	Left:  50%;
+	transform:  translate(-50%, -50%);
+	width: 400px;
+}
+.Student p {
+	font-size: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 40px 0;
+}
+
+.Student p{
+	font-size: 20px;
+	margin: 15px 0;
+}

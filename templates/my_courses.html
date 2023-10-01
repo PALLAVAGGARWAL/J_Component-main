@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section class="about">
+    <h1 class="text-center my-5"><strong>My Course Details</strong></h2>
+    <table class="table table-bordered table-dark my-5">
+        <thead>
+        <tr>
+            <th scope="col">Course ID</th>
+            <th scope="col">Course Title</th>
+            <th scope="col">Course Type</th>
+            <th scope="col">Credits</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for course in allCourses %}
+            <tr>
+                <th scope="row">{{course.course_id}}</th>
+                <td>{{course.title}}</td>
+                <td>{{course.course_type}}</td>
+                <td>{{course.credit}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="m-5">
+        <h2><strong>Total Credits = {{total}}</strong></h2>
+    </div>
+</section>
+
+{% endblock content %}
